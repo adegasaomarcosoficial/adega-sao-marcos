@@ -63,7 +63,13 @@ export default function ChoppTypesSection() {
               key={index}
               className="bg-white rounded-lg p-6 border border-[#E8E4DC] hover:shadow-lg transition-all"
             >
-              <div className="text-5xl mb-4">{type.emoji}</div>
+              <div className="w-full h-28 bg-[#F5F1E8] rounded-md mb-4 flex items-center justify-center overflow-hidden">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/chopeira-ashby-profissional-jejSrWQyt3aHpkwSxpQdk7.webp"
+                  alt={`Chopp Ashby ${type.name}`}
+                  className="w-auto h-full object-contain p-2"
+                />
+              </div>
               <h3 className="text-xl font-bold text-[#333333] mb-2">
                 {type.name}
               </h3>

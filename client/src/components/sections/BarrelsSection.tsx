@@ -74,14 +74,11 @@ export default function BarrelsSection() {
 
               <div className="text-center mb-4">
                 <div className="w-full h-32 bg-[#F5F1E8] rounded-md mb-3 flex items-center justify-center overflow-hidden">
-                  {index === 2 && (
-                    <img
-                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/barril-ashby-chopp-magMHQRr2xqcPkTfCZp72M.webp"
-                      alt={`Barril ${barrel.size} Ashby`}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                  {index !== 2 && <div className="text-3xl">🛢️</div>}
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/chopeira-ashby-profissional-jejSrWQyt3aHpkwSxpQdk7.webp"
+                    alt={`Barril ${barrel.size} Chopp Ashby`}
+                    className="w-auto h-full object-contain p-2"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-[#333333]">{barrel.size}</h3>
               </div>
