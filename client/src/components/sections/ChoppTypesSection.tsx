@@ -1,48 +1,78 @@
+/*
+ * Design: Ashby Commercial - Chopp Types Section
+ * Paleta: Vermelho #8B0000, Branco, Bege #F5F1E8
+ * Cards com imagens reais dos copos Ashby + dados técnicos oficiais
+ */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 const WHATSAPP_NUMBER = "5519993444124";
 
 const choppTypes = [
   {
-    name: "Session IPA",
-    emoji: "🍺",
-    description: "Leve e refrescante com toque de lúpulo",
+    name: "Ashby Pilsen Puro Malte",
+    image: "/manus-storage/ashby-pilsen-puro-malte_b5d495e6.webp",
+    description:
+      "O chopp feito com 100% malte de cevada, que confere muito sabor, além de 4 lúpulos alemães e americanos — que transferem os aromas herbais.",
+    ibu: 12,
+    teor: "4,6%",
+    copo: "Pilsner ou Pokal",
+    bgColor: "bg-amber-900/10",
   },
   {
-    name: "Pilsen Puro Malte",
-    emoji: "🌾",
-    description: "Clássica e equilibrada para todos",
+    name: "Ashby Pilsen Claro",
+    image: "/manus-storage/ashby-pilsen-claro_4068684f.webp",
+    description:
+      "Suave e extremamente refrescante, este é o chopp clássico que vai bem em qualquer momento.",
+    ibu: 12,
+    teor: "4,8%",
+    copo: "Pilsner ou Pokal",
+    bgColor: "bg-red-900/10",
   },
   {
-    name: "Pale Ale",
-    emoji: "🔥",
-    description: "Encorpada com notas de caramelo",
+    name: "Ashby Pilsen Escuro",
+    image: "/manus-storage/ashby-pilsen-escuro_790909b4.webp",
+    description:
+      "Com textura única e colarinho espesso, apresenta sabores suavemente adocicados e aromas com notas de frutas, caramelo e malte torrado.",
+    ibu: 11,
+    teor: "4,8%",
+    copo: "Pilsner ou Pokal",
+    bgColor: "bg-stone-900/10",
   },
   {
-    name: "IPA Nirvana",
-    emoji: "✨",
-    description: "Intensa e aromática para apreciadores",
+    name: "Ashby Weiss",
+    image: "/manus-storage/ashby-weiss_69cd704a.webp",
+    description:
+      "O tradicional e forte chopp de trigo da Baviera, diretamente no seu copo. Prove esse sabor alemão com aroma de cravo e banana.",
+    ibu: 15,
+    teor: "6,7%",
+    copo: "Weizen",
+    bgColor: "bg-blue-900/10",
   },
   {
-    name: "Weiss",
-    emoji: "🌾",
-    description: "Bavara com notas de trigo e banana",
+    name: "Ashby IPA Nirvana",
+    image: "/manus-storage/ashby-ipa-nirvana_2e2c2202.webp",
+    description:
+      "Essa representante do estilo India Pale Ale traz 4 lúpulos e o processo de dry hopping, sendo amargo e aromático no ponto certo.",
+    ibu: 55,
+    teor: "5,5%",
+    copo: "Pint",
+    bgColor: "bg-green-900/10",
   },
   {
-    name: "Pilsen Escuro",
-    emoji: "🌑",
-    description: "Encorpada com toque de chocolate",
-  },
-  {
-    name: "Pilsen Claro",
-    emoji: "☀️",
-    description: "Refrescante e leve para qualquer ocasião",
+    name: "Ashby Pale Ale",
+    image: "/manus-storage/ashby-pale-ale_c340c32a.png",
+    description:
+      "Uma agradável receita inglesa que combina o aroma herbal dos lúpulos selecionados com o sabor de pão e cereais dos maltes especiais.",
+    ibu: 18,
+    teor: "5,1%",
+    copo: "Snifter",
+    bgColor: "bg-orange-900/10",
   },
 ];
 
 export default function ChoppTypesSection() {
   const handleWhatsApp = (type: string) => {
-    const message = `Olá! Gostaria de saber mais sobre o Chopp Ashby ${type}.`;
+    const message = `Olá! Gostaria de saber mais sobre o ${type}.`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
@@ -53,34 +83,58 @@ export default function ChoppTypesSection() {
         <div className="text-center mb-12">
           <h2 className="heading-lg mb-4">Conheça os Tipos de Chopp Ashby</h2>
           <p className="text-lg text-[#666666]">
-            7 estilos diferentes para todos os gostos
+            6 estilos premiados para todos os gostos
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {choppTypes.map((type, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-[#E8E4DC] hover:shadow-lg transition-all"
+              className={`rounded-xl overflow-hidden border border-[#E8E4DC] hover:shadow-xl transition-all duration-300 bg-white`}
             >
-              <div className="w-full h-28 bg-[#F5F1E8] rounded-md mb-4 flex items-center justify-center overflow-hidden">
+              {/* Imagem do Chopp */}
+              <div className={`${type.bgColor} flex items-center justify-center h-56 p-4`}>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/chopeira-ashby-profissional-jejSrWQyt3aHpkwSxpQdk7.webp"
-                  alt={`Chopp Ashby ${type.name}`}
-                  className="w-auto h-full object-contain p-2"
+                  src={type.image}
+                  alt={type.name}
+                  className="w-auto h-full object-contain drop-shadow-lg"
                 />
               </div>
-              <h3 className="text-xl font-bold text-[#333333] mb-2">
-                {type.name}
-              </h3>
-              <p className="text-sm text-[#666666] mb-4">{type.description}</p>
-              <button
-                onClick={() => handleWhatsApp(type.name)}
-                className="w-full bg-[#25D366] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#20BA58] transition-all text-sm flex items-center justify-center gap-2"
-              >
-                <WhatsAppIcon size={14} />
-                Saber Mais
-              </button>
+
+              {/* Conteúdo */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#333333] mb-3">
+                  {type.name}
+                </h3>
+                <p className="text-sm text-[#666666] mb-4 leading-relaxed">
+                  {type.description}
+                </p>
+
+                {/* Dados Técnicos */}
+                <div className="grid grid-cols-3 gap-2 mb-4 text-center">
+                  <div className="bg-[#F5F1E8] rounded-md py-2 px-1">
+                    <p className="text-xs text-[#999999] font-medium">IBU</p>
+                    <p className="text-sm font-bold text-[#8B0000]">{type.ibu}</p>
+                  </div>
+                  <div className="bg-[#F5F1E8] rounded-md py-2 px-1">
+                    <p className="text-xs text-[#999999] font-medium">Teor</p>
+                    <p className="text-sm font-bold text-[#8B0000]">{type.teor}</p>
+                  </div>
+                  <div className="bg-[#F5F1E8] rounded-md py-2 px-1">
+                    <p className="text-xs text-[#999999] font-medium">Copo</p>
+                    <p className="text-xs font-bold text-[#8B0000]">{type.copo}</p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => handleWhatsApp(type.name)}
+                  className="w-full bg-[#25D366] text-white px-4 py-3 rounded-md font-semibold hover:bg-[#20BA58] transition-all flex items-center justify-center gap-2"
+                >
+                  <WhatsAppIcon size={16} />
+                  Pedir Este Chopp
+                </button>
+              </div>
             </div>
           ))}
         </div>
