@@ -5,23 +5,27 @@ const WHATSAPP_NUMBER = "5519993444124";
 
 export function Footer() {
   return (
-    <footer className="bg-[#333333] text-white py-12">
+    <footer className="bg-[#1a1a1a] text-white py-12">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Empresa */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#8B0000] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">A</span>
-              </div>
-              <div>
-                <p className="text-sm font-bold">ADEGA</p>
-                <p className="text-xs">SÃO MARCOS</p>
-              </div>
-            </div>
+            <img
+              src="/manus-storage/adega-logo_10dd0845.png"
+              alt="Adega São Marcos"
+              className="h-20 w-auto object-contain mb-4"
+            />
             <p className="text-sm text-gray-300">
               Chopp Ashby para festas e eventos em Valinhos, Campinas e região.
             </p>
+            <div className="mt-4 flex items-center gap-3">
+              <span className="text-xs text-gray-500">Distribuidor oficial:</span>
+              <img
+                src="/manus-storage/ashby-logo_3704ba10.png"
+                alt="Ashby Cervejaria"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
           </div>
 
           {/* Contato */}
@@ -73,8 +77,18 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#tipos-chopp" className="hover:text-[#D4AF37] transition-colors">
+                  Tipos de Chopp
+                </a>
+              </li>
+              <li>
                 <a href="#chopeira" className="hover:text-[#D4AF37] transition-colors">
                   Chopeira
+                </a>
+              </li>
+              <li>
+                <a href="#parceria" className="hover:text-[#D4AF37] transition-colors">
+                  Ashby
                 </a>
               </li>
               <li>
@@ -98,33 +112,19 @@ export function Footer() {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#D4AF37] transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#25D366] transition-colors"
               >
                 <WhatsAppIcon size={18} />
                 WhatsApp
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#D4AF37] transition-colors"
-              >
-                <span>📱</span>
-                Instagram
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#D4AF37] transition-colors"
-              >
-                <span>f</span>
-                Facebook
               </a>
             </div>
           </div>
         </div>
 
         {/* Divisor */}
-        <div className="border-t border-gray-600 pt-8">
+        <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
-            <p>© 2020-2026 Adega São Marcos. Todos os direitos reservados.</p>
+            <p>© 2020–2026 Adega São Marcos. Todos os direitos reservados.</p>
             <p>
               Venda e consumo de bebidas alcoólicas proibidos para menores de 18
               anos.

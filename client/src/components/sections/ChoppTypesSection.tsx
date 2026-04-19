@@ -78,7 +78,7 @@ export default function ChoppTypesSection() {
   };
 
   return (
-    <section className="section section-beige">
+    <section id="tipos-chopp" className="section section-beige">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="heading-lg mb-4">Conheça os Tipos de Chopp Ashby</h2>

@@ -1,11 +1,14 @@
-import { Button } from "@/components/ui/button";
+/*
+ * Home Page - Adega São Marcos
+ * Ordem: Hero → TrustBar → Barris → Tipos de Chopp → Chopeira → Parceria Ashby → Como Funciona → Diferenciais → FAQ → CTA
+ */
 import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import BarrelsSection from "@/components/sections/BarrelsSection";
 import ChoppTypesSection from "@/components/sections/ChoppTypesSection";
 import ChoppeiraSection from "@/components/sections/ChoppeiraSection";
-import SinceSection from "@/components/sections/SinceSection";
+import PartnershipSection from "@/components/sections/PartnershipSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Differentials from "@/components/sections/Differentials";
 import FAQ from "@/components/sections/FAQ";
@@ -23,7 +26,7 @@ export default function Home() {
         <BarrelsSection />
         <ChoppTypesSection />
         <ChoppeiraSection />
-        <SinceSection />
+        <PartnershipSection />
         <HowItWorks />
         <Differentials />
         <FAQ />
