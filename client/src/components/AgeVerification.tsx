@@ -42,7 +42,7 @@ export default function AgeVerification({ children }: AgeVerificationProps) {
           {/* Logo Adega São Marcos */}
           <div className="flex justify-center mb-6">
             <img
-              src="/manus-storage/AdegaLogoSite_c4b4e2b9.png"
+              src="/manus-storage/AdegaLogoSite_6e09f4ff.png"
               alt="Adega São Marcos"
               className="w-36 h-36 object-contain"
             />
