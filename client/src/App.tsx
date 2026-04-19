@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import AgeVerification from "./components/AgeVerification";
 import Home from "./pages/Home";
 
 function Router() {
@@ -23,7 +24,9 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <AgeVerification>
+            <Router />
+          </AgeVerification>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
