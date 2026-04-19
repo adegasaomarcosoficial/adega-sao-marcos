@@ -1,7 +1,6 @@
 /*
- * Design: Ashby Commercial - Chopp Types Section
- * Paleta: Vermelho #8B0000, Branco, Bege #F5F1E8
- * Cards com imagens reais dos copos Ashby + dados técnicos oficiais
+ * Tipos de Chopp Ashby - Cards com efeitos hover modernos
+ * Imagens reais dos copos Ashby + dados técnicos oficiais
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
@@ -16,7 +15,7 @@ const choppTypes = [
     ibu: 12,
     teor: "4,6%",
     copo: "Pilsner ou Pokal",
-    bgColor: "bg-amber-900/10",
+    bgColor: "from-amber-800/20 to-amber-600/5",
   },
   {
     name: "Ashby Pilsen Claro",
@@ -26,7 +25,7 @@ const choppTypes = [
     ibu: 12,
     teor: "4,8%",
     copo: "Pilsner ou Pokal",
-    bgColor: "bg-red-900/10",
+    bgColor: "from-red-800/20 to-red-600/5",
   },
   {
     name: "Ashby Pilsen Escuro",
@@ -36,7 +35,7 @@ const choppTypes = [
     ibu: 11,
     teor: "4,8%",
     copo: "Pilsner ou Pokal",
-    bgColor: "bg-stone-900/10",
+    bgColor: "from-stone-800/20 to-stone-600/5",
   },
   {
     name: "Ashby Weiss",
@@ -46,7 +45,7 @@ const choppTypes = [
     ibu: 15,
     teor: "6,7%",
     copo: "Weizen",
-    bgColor: "bg-blue-900/10",
+    bgColor: "from-blue-800/20 to-blue-600/5",
   },
   {
     name: "Ashby IPA Nirvana",
@@ -56,7 +55,7 @@ const choppTypes = [
     ibu: 55,
     teor: "5,5%",
     copo: "Pint",
-    bgColor: "bg-green-900/10",
+    bgColor: "from-green-800/20 to-green-600/5",
   },
   {
     name: "Ashby Pale Ale",
@@ -66,7 +65,7 @@ const choppTypes = [
     ibu: 18,
     teor: "5,1%",
     copo: "Snifter",
-    bgColor: "bg-orange-900/10",
+    bgColor: "from-orange-800/20 to-orange-600/5",
   },
 ];
 
@@ -81,6 +80,9 @@ export default function ChoppTypesSection() {
     <section id="tipos-chopp" className="section section-beige">
       <div className="container">
         <div className="text-center mb-12">
+          <p className="text-[#8B0000] font-semibold uppercase tracking-widest text-sm mb-2">
+            Premiados Internacionalmente
+          </p>
           <h2 className="heading-lg mb-4">Conheça os Tipos de Chopp Ashby</h2>
           <p className="text-lg text-[#666666]">
             6 estilos premiados para todos os gostos
@@ -91,20 +93,26 @@ export default function ChoppTypesSection() {
           {choppTypes.map((type, index) => (
             <div
               key={index}
-              className={`rounded-xl overflow-hidden border border-[#E8E4DC] hover:shadow-xl transition-all duration-300 bg-white`}
+              className="group rounded-xl overflow-hidden border border-[#E8E4DC] bg-white
+                transition-all duration-500 ease-out
+                hover:shadow-[0_25px_60px_-15px_rgba(139,0,0,0.15)]
+                hover:-translate-y-3 hover:border-[#D4AF37]/50"
             >
-              {/* Imagem do Chopp */}
-              <div className={`${type.bgColor} flex items-center justify-center h-56 p-4`}>
+              {/* Imagem do Chopp com hover */}
+              <div className={`bg-gradient-to-b ${type.bgColor} flex items-center justify-center h-56 p-4 overflow-hidden
+                transition-all duration-500 group-hover:bg-gradient-to-b group-hover:from-[#8B0000]/10 group-hover:to-transparent`}>
                 <img
                   src={type.image}
                   alt={type.name}
-                  className="w-auto h-full object-contain drop-shadow-lg"
+                  className="w-auto h-full object-contain drop-shadow-lg
+                    transition-all duration-700 ease-out
+                    group-hover:scale-115 group-hover:drop-shadow-2xl group-hover:-rotate-3"
                 />
               </div>
 
               {/* Conteúdo */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#333333] mb-3">
+                <h3 className="text-xl font-bold text-[#333333] mb-3 transition-colors duration-300 group-hover:text-[#8B0000]">
                   {type.name}
                 </h3>
                 <p className="text-sm text-[#666666] mb-4 leading-relaxed">
@@ -113,15 +121,15 @@ export default function ChoppTypesSection() {
 
                 {/* Dados Técnicos */}
                 <div className="grid grid-cols-3 gap-2 mb-4 text-center">
-                  <div className="bg-[#F5F1E8] rounded-md py-2 px-1">
+                  <div className="bg-[#F5F1E8] rounded-lg py-2 px-1 transition-all duration-300 group-hover:bg-[#8B0000]/10">
                     <p className="text-xs text-[#999999] font-medium">IBU</p>
                     <p className="text-sm font-bold text-[#8B0000]">{type.ibu}</p>
                   </div>
-                  <div className="bg-[#F5F1E8] rounded-md py-2 px-1">
+                  <div className="bg-[#F5F1E8] rounded-lg py-2 px-1 transition-all duration-300 group-hover:bg-[#8B0000]/10">
                     <p className="text-xs text-[#999999] font-medium">Teor</p>
                     <p className="text-sm font-bold text-[#8B0000]">{type.teor}</p>
                   </div>
-                  <div className="bg-[#F5F1E8] rounded-md py-2 px-1">
+                  <div className="bg-[#F5F1E8] rounded-lg py-2 px-1 transition-all duration-300 group-hover:bg-[#8B0000]/10">
                     <p className="text-xs text-[#999999] font-medium">Copo</p>
                     <p className="text-xs font-bold text-[#8B0000]">{type.copo}</p>
                   </div>
@@ -129,7 +137,10 @@ export default function ChoppTypesSection() {
 
                 <button
                   onClick={() => handleWhatsApp(type.name)}
-                  className="w-full bg-[#25D366] text-white px-4 py-3 rounded-md font-semibold hover:bg-[#20BA58] transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-[#25D366] text-white px-4 py-3 rounded-lg font-semibold
+                    transition-all duration-300 flex items-center justify-center gap-2
+                    hover:bg-[#20BA58] hover:shadow-lg
+                    group-hover:shadow-[0_4px_15px_rgba(37,211,102,0.4)]"
                 >
                   <WhatsAppIcon size={16} />
                   Pedir Este Chopp
@@ -147,9 +158,10 @@ export default function ChoppTypesSection() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de saber mais sobre os tipos de Chopp Ashby disponíveis.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#25D366] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#20BA58] transition-all inline-flex items-center gap-2"
+            className="bg-[#25D366] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2
+              hover:bg-[#20BA58] hover:shadow-lg hover:scale-105"
           >
-            <WhatsAppIcon size={16} />
+            <WhatsAppIcon size={18} />
             Conversar no WhatsApp
           </a>
         </div>

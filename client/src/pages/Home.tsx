@@ -1,6 +1,6 @@
 /*
  * Home Page - Adega São Marcos
- * Ordem: Hero → TrustBar → Barris → Tipos de Chopp → Chopeira → Parceria Ashby → Como Funciona → Diferenciais → FAQ → CTA
+ * Ordem: Hero → TrustBar → Barris → Tipos de Chopp → Chopeira → Parceria → Como Funciona → Diferenciais → FAQ → CTA
  */
 import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";

@@ -1,6 +1,6 @@
 /*
  * Header - Adega São Marcos
- * Logo real + navegação + WhatsApp
+ * Logo real + nome premium + navegação + WhatsApp
  */
 import { useState } from "react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
@@ -15,33 +15,57 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#E8E4DC] shadow-sm">
       <div className="container flex items-center justify-between h-20">
-        {/* Logo Real */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
+        {/* Logo + Nome Premium */}
+        <a href="#" className="flex items-center gap-3 shrink-0">
           <img
             src="/manus-storage/adega-logo_10dd0845.png"
             alt="Adega São Marcos"
-            className="h-16 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span
+              className="text-lg font-bold tracking-wide"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                background: "linear-gradient(135deg, #8B0000 0%, #D4AF37 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              ADEGA
+            </span>
+            <span
+              className="text-xl font-black tracking-wider"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                background: "linear-gradient(135deg, #D4AF37 0%, #8B0000 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              SÃO MARCOS
+            </span>
+          </div>
         </a>
 
         {/* Navegação Desktop */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#barris" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium">
+        <nav className="hidden lg:flex items-center gap-6">
+          <a href="#barris" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             Barris
           </a>
-          <a href="#tipos-chopp" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium">
+          <a href="#tipos-chopp" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             Tipos de Chopp
           </a>
-          <a href="#chopeira" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium">
+          <a href="#chopeira" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             Chopeira
           </a>
-          <a href="#parceria" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium">
+          <a href="#parceria" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             Ashby
           </a>
-          <a href="#como-funciona" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium">
+          <a href="#como-funciona" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             Como Funciona
           </a>
-          <a href="#faq" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium">
+          <a href="#faq" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             FAQ
           </a>
         </nav>
@@ -60,7 +84,7 @@ export default function Header() {
 
           {/* Hamburguer Mobile */}
           <button
-            className="md:hidden text-[#333333]"
+            className="lg:hidden text-[#333333]"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -70,7 +94,7 @@ export default function Header() {
 
       {/* Menu Mobile */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-[#E8E4DC] px-4 py-4 space-y-3">
+        <div className="lg:hidden bg-white border-t border-[#E8E4DC] px-4 py-4 space-y-3 shadow-lg">
           <a href="#barris" onClick={() => setMobileOpen(false)} className="block text-[#333333] hover:text-[#8B0000] font-medium py-2">
             Barris
           </a>

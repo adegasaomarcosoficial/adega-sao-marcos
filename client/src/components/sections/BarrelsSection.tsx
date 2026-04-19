@@ -1,3 +1,7 @@
+/*
+ * Barris de Chopp Ashby - PRIMEIRA seção após Hero
+ * Efeitos hover modernos: scale, shadow, glow
+ */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 const WHATSAPP_NUMBER = "5519993444124";
@@ -48,55 +52,69 @@ export default function BarrelsSection() {
     <section id="barris" className="section section-light">
       <div className="container">
         <div className="text-center mb-12">
+          <p className="text-[#8B0000] font-semibold uppercase tracking-widest text-sm mb-2">
+            Preços Especiais
+          </p>
           <h2 className="heading-lg mb-4">Barris de Chopp Ashby</h2>
           <p className="text-lg text-[#666666]">
             Escolha o tamanho ideal para seu evento
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {barrels.map((barrel, index) => (
             <div
               key={index}
-              className={`relative rounded-lg p-6 border-2 transition-all hover:shadow-lg ${
-                barrel.popular
-                  ? "border-[#8B0000] bg-[#FFF5F5]"
-                  : "border-[#E8E4DC] bg-white"
-              }`}
+              className={`group relative rounded-xl p-6 border-2 bg-white cursor-pointer
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-2
+                ${barrel.popular
+                  ? "border-[#8B0000] shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(139,0,0,0.3)]"
+                  : "border-[#E8E4DC] hover:border-[#D4AF37] hover:shadow-[0_20px_60px_-15px_rgba(212,175,55,0.2)]"
+                }`}
             >
               {barrel.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-[#8B0000] text-white px-3 py-1 rounded-full text-xs font-bold">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                  <span className="bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white px-4 py-1 rounded-full text-xs font-bold shadow-md">
                     Popular
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-4">
-                <div className="w-full h-32 bg-[#F5F1E8] rounded-md mb-3 flex items-center justify-center overflow-hidden">
+                <div className="w-full h-32 bg-gradient-to-b from-[#F5F1E8] to-[#EDE8DB] rounded-lg mb-3 flex items-center justify-center overflow-hidden
+                  transition-all duration-300 group-hover:bg-gradient-to-b group-hover:from-[#FFF5F0] group-hover:to-[#F5F1E8]">
                   <img
                     src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/chopeira-ashby-profissional-jejSrWQyt3aHpkwSxpQdk7.webp"
                     alt={`Barril ${barrel.size} Chopp Ashby`}
-                    className="w-auto h-full object-contain p-2"
+                    className="w-auto h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-2"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-[#333333]">{barrel.size}</h3>
+                <h3 className="text-xl font-bold text-[#333333] transition-colors duration-300 group-hover:text-[#8B0000]">
+                  {barrel.size}
+                </h3>
               </div>
 
-              <p className="text-sm text-[#666666] mb-4 text-center">
+              <p className="text-sm text-[#666666] mb-4 text-center leading-relaxed">
                 {barrel.description}
               </p>
 
-              <div className="bg-[#F5F1E8] rounded-md p-3 mb-4 text-center">
-                <p className="text-2xl font-bold text-[#8B0000]">
+              <div className="bg-gradient-to-r from-[#F5F1E8] to-[#EDE8DB] rounded-lg p-3 mb-4 text-center
+                transition-all duration-300 group-hover:from-[#8B0000] group-hover:to-[#A52A2A]">
+                <p className="text-2xl font-bold text-[#8B0000] transition-colors duration-300 group-hover:text-white">
                   R$ {barrel.pricePerLiter.toFixed(2)}
                 </p>
-                <p className="text-xs text-[#666666]">por litro</p>
+                <p className="text-xs text-[#666666] transition-colors duration-300 group-hover:text-white/80">
+                  por litro
+                </p>
               </div>
 
               <button
                 onClick={() => handleWhatsApp(barrel.size, barrel.pricePerLiter)}
-                className="w-full bg-[#25D366] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#20BA58] transition-all flex items-center justify-center gap-2"
+                className="w-full bg-[#25D366] text-white px-4 py-2.5 rounded-lg font-semibold
+                  transition-all duration-300 flex items-center justify-center gap-2
+                  hover:bg-[#20BA58] hover:shadow-lg
+                  group-hover:shadow-[0_4px_15px_rgba(37,211,102,0.4)]"
               >
                 <WhatsAppIcon size={16} />
                 Pedir Orçamento
@@ -105,17 +123,18 @@ export default function BarrelsSection() {
           ))}
         </div>
 
-        <div className="mt-12 bg-[#F5F1E8] rounded-lg p-6 text-center">
-          <p className="text-[#666666] mb-4">
+        <div className="mt-12 bg-gradient-to-r from-[#F5F1E8] to-[#EDE8DB] rounded-xl p-8 text-center
+          border border-[#E8E4DC] hover:shadow-lg transition-all duration-300">
+          <p className="text-[#666666] mb-4 text-lg">
             Não sabe qual barril escolher?
           </p>
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de ajuda para escolher o barril ideal para meu evento.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#25D366] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#20BA58] transition-all inline-flex items-center gap-2"
+            className="bg-[#25D366] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#20BA58] transition-all duration-300 inline-flex items-center gap-2 hover:shadow-lg hover:scale-105"
           >
-            <WhatsAppIcon size={16} />
+            <WhatsAppIcon size={18} />
             Me Ajude a Escolher
           </a>
         </div>
