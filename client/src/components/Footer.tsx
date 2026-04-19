@@ -1,73 +1,135 @@
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
-/**
- * Componente Footer
- * Design: Luxo Cervejeiro Contemporâneo
- */
+const WHATSAPP_NUMBER = "5519993444124";
+
 export function Footer() {
   return (
-    <footer className="bg-secondary border-t border-primary/20 py-12 relative z-10">
+    <footer className="bg-[#333333] text-white py-12">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Sobre */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Adega São Marcos</h3>
-            <p className="text-sm text-foreground/70">
-              Fornecedora oficial de chopp Ashby em Valinhos. 
-              Qualidade premium para suas celebrações.
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Empresa */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-[#8B0000] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold">A</span>
+              </div>
+              <div>
+                <p className="text-sm font-bold">ADEGA</p>
+                <p className="text-xs">SÃO MARCOS</p>
+              </div>
+            </div>
+            <p className="text-sm text-gray-300">
+              Chopp Ashby para festas e eventos em Valinhos, Campinas e região.
             </p>
           </div>
 
           {/* Contato */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Contato</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-foreground/70">
-                <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+5519993444124" className="hover:text-primary transition">
+          <div>
+            <h4 className="font-bold mb-4">Contato</h4>
+            <div className="space-y-3 text-sm text-gray-300">
+              <div className="flex items-start gap-2">
+                <MapPin size={16} className="flex-shrink-0 mt-1" />
+                <div>
+                  <p>Rua João Previtale, 2625</p>
+                  <p>Jardim São Marcos – Valinhos</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={16} />
+                <a
+                  href={`tel:+${WHATSAPP_NUMBER}`}
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
                   (19) 99344-4124
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-foreground/70">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>Valinhos, SP</span>
+              <div className="flex items-center gap-2">
+                <WhatsAppIcon size={16} />
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  WhatsApp
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Horário */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Horário</h3>
-            <div className="space-y-2 text-sm text-foreground/70">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary" />
-                <span>Disponível 24/7</span>
-              </div>
-              <p className="text-xs">
-                Entre em contato via WhatsApp para orçamentos e agendamentos.
-              </p>
+          {/* Links Rápidos */}
+          <div>
+            <h4 className="font-bold mb-4">Links Rápidos</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#barris" className="hover:text-[#D4AF37] transition-colors">
+                  Barris
+                </a>
+              </li>
+              <li>
+                <a href="#chopeira" className="hover:text-[#D4AF37] transition-colors">
+                  Chopeira
+                </a>
+              </li>
+              <li>
+                <a href="#como-funciona" className="hover:text-[#D4AF37] transition-colors">
+                  Como Funciona
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-[#D4AF37] transition-colors">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Redes Sociais */}
+          <div>
+            <h4 className="font-bold mb-4">Redes Sociais</h4>
+            <div className="space-y-2">
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#D4AF37] transition-colors"
+              >
+                <WhatsAppIcon size={18} />
+                WhatsApp
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#D4AF37] transition-colors"
+              >
+                <span>📱</span>
+                Instagram
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#D4AF37] transition-colors"
+              >
+                <span>f</span>
+                Facebook
+              </a>
             </div>
           </div>
         </div>
 
         {/* Divisor */}
-        <div className="border-t border-primary/20 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2026 Adega São Marcos. Todos os direitos reservados.
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Chopp Ashby • Valinhos, SP
+        <div className="border-t border-gray-600 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+            <p>© 2020-2026 Adega São Marcos. Todos os direitos reservados.</p>
+            <p>
+              Venda e consumo de bebidas alcoólicas proibidos para menores de 18
+              anos.
             </p>
           </div>
-        </div>
-
-        {/* Aviso Legal */}
-        <div className="mt-6 pt-6 border-t border-primary/20">
-          <p className="text-xs text-muted-foreground text-center">
-            Este site é destinado apenas para maiores de 18 anos. 
-            Bebida alcoólica. Consumo excessivo de álcool é prejudicial à saúde.
-          </p>
         </div>
       </div>
     </footer>
