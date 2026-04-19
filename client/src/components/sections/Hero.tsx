@@ -1,9 +1,8 @@
 /*
  * Hero Section - Adega São Marcos
- * Chopeira com efeito hover + CTA forte
+ * Limpo: Título + Botão WhatsApp + Imagem Chopeira
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-import { MapPin, Clock, Star } from "lucide-react";
 
 const WHATSAPP_NUMBER = "5519993444124";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de fazer um orçamento para chopp Ashby.`;
@@ -18,42 +17,11 @@ export default function Hero() {
       <div className="container relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Conteúdo */}
-          <div className="flex flex-col gap-6">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-[#8B0000]/10 text-[#8B0000] px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
-                <Star size={14} className="fill-[#D4AF37] text-[#D4AF37]" />
-                Chopp Premiado Internacionalmente
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] leading-tight mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Chopp Ashby Gelado{" "}
-                <span className="text-[#8B0000]">para Seu Evento</span>
-              </h1>
-              <p className="text-xl text-[#666666] mb-2 leading-relaxed">
-                Locação de chopeira com instalação + atendimento personalizado
-              </p>
-              <div className="flex flex-wrap gap-4 mt-3">
-                <div className="flex items-center gap-1.5 text-sm text-[#666666]">
-                  <MapPin size={16} className="text-[#8B0000]" />
-                  Valinhos, Campinas e região
-                </div>
-                <div className="flex items-center gap-1.5 text-sm text-[#666666]">
-                  <Clock size={16} className="text-[#8B0000]" />
-                  Atendimento rápido
-                </div>
-              </div>
-            </div>
-
-            {/* Preços destaque */}
-            <div className="flex flex-wrap gap-4">
-              <div className="bg-white rounded-xl px-5 py-3 shadow-md border border-[#E8E4DC]">
-                <p className="text-xs text-[#999999]">Chopeira</p>
-                <p className="text-2xl font-bold text-[#8B0000]">R$ 49,90</p>
-              </div>
-              <div className="bg-white rounded-xl px-5 py-3 shadow-md border border-[#E8E4DC]">
-                <p className="text-xs text-[#999999]">Barril a partir de</p>
-                <p className="text-2xl font-bold text-[#8B0000]">R$ 12,99<span className="text-sm font-normal text-[#999999]">/L</span></p>
-              </div>
-            </div>
+          <div className="flex flex-col gap-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Chopp Ashby Gelado{" "}
+              <span className="text-[#8B0000]">para Seu Evento</span>
+            </h1>
 
             <a
               href={WHATSAPP_URL}
