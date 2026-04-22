@@ -9,7 +9,7 @@ export default function CTAFinal() {
     <section className="section section-ashby">
       <div className="container text-center">
         <h2 className="heading-lg mb-4 text-white">Pronto para Seu Evento?</h2>
-        <p className="text-xl mb-8 opacity-90">
+        <p className="text-xl mb-8 text-white font-medium">
           Fale com a Adega São Marcos e faça seu orçamento
         </p>
 
@@ -33,7 +33,7 @@ export default function CTAFinal() {
           </a>
         </div>
 
-        <p className="mt-8 text-sm opacity-75">
+        <p className="mt-8 text-base text-white font-medium">
           Atendimento rápido para Valinhos, Campinas e região
         </p>
       </div>

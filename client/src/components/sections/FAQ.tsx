@@ -58,41 +58,43 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section section-light">
+    <section id="faq" className="py-12 bg-white">
       <div className="container max-w-3xl">
-        <div className="text-center mb-12">
-          <h2 className="heading-lg mb-4">Dúvidas Frequentes</h2>
-          <p className="text-lg text-[#666666]">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#333333] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Dúvidas Frequentes
+          </h2>
+          <p className="text-sm text-[#666666]">
             Encontre respostas para as perguntas mais comuns
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-[#E8E4DC] rounded-lg overflow-hidden"
+              className="border border-[#E8E4DC] rounded-md overflow-hidden"
             >
               <button
                 onClick={() =>
                   setOpenIndex(openIndex === index ? null : index)
                 }
-                className="w-full px-6 py-4 bg-white hover:bg-[#F5F1E8] transition-colors flex items-center justify-between"
+                className="w-full px-4 py-2.5 bg-white hover:bg-[#F5F1E8] transition-colors flex items-center justify-between gap-3"
               >
-                <span className="font-semibold text-[#333333] text-left">
+                <span className="font-medium text-[#333333] text-left text-sm">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  size={20}
-                  className={`text-[#8B0000] flex-shrink-0 transition-transform ${
+                  size={16}
+                  className={`text-[#8B0000] flex-shrink-0 transition-transform duration-200 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
               {openIndex === index && (
-                <div className="px-6 py-4 bg-[#F5F1E8] border-t border-[#E8E4DC]">
-                  <p className="text-[#666666]">{faq.answer}</p>
+                <div className="px-4 py-2.5 bg-[#F5F1E8] border-t border-[#E8E4DC]">
+                  <p className="text-sm text-[#666666] leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
