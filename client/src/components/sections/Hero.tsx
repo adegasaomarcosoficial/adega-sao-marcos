@@ -19,13 +19,13 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster="/manus-storage/adega-fachada_bc0e9403.png"
+          poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/wuTxhpTVaffedzGQ.png"
           preload="metadata"
         >
-          <source src="/manus-storage/hero-chopp-ashby_cf33dd4f.mp4" type="video/mp4" />
+          <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/boErhyBiRcQEnNAJ.mp4" type="video/mp4" />
           {/* Fallback: imagem da fachada se vídeo não carregar */}
           <img
-            src="/manus-storage/adega-fachada_bc0e9403.png"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/wuTxhpTVaffedzGQ.png"
             alt="Adega São Marcos"
             className="w-full h-full object-cover"
           />
