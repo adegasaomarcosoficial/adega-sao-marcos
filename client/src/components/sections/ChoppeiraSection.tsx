@@ -33,7 +33,7 @@ export default function ChoppeiraSection() {
           <div className="group flex justify-center">
             <div className="relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-[0_30px_80px_-20px_rgba(139,0,0,0.25)]">
               <img
-                src="/assets/chopeira-ashby.webp"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/iHgYySdyfGJbphAE.png"
                 alt="Chopeira Ashby com Instalação"
                 className="w-full h-auto transition-all duration-700 ease-out group-hover:scale-110"
               />

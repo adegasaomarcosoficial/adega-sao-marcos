@@ -50,7 +50,7 @@ export function Footer() {
             <div className="mt-4 flex items-center gap-3">
               <span className="text-xs text-gray-500">Distribuidor oficial:</span>
               <img
-                src="/assets/ashby-logo.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/zuZDYXcOrtWrmlgE.png"
                 alt="Ashby Cervejaria"
                 className="h-10 w-auto object-contain"
               />
