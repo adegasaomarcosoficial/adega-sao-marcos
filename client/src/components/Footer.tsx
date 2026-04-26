@@ -177,6 +177,44 @@ export function Footer() {
               anos.
             </p>
           </div>
+
+          {/* Assinatura OLEGARIO TECH */}
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://olegariotech.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2.5 opacity-40 hover:opacity-80 transition-opacity duration-300"
+              title="OLEGARIO TECH - Sites profissionais, performance e tecnologia"
+            >
+              {/* Monograma OT — círculo com T interno, fiel ao logo */}
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="OLEGARIO TECH"
+                role="img"
+              >
+                {/* Círculo externo com abertura na base (fiel ao logo) */}
+                <path
+                  d="M 50 8 A 42 42 0 1 1 22 78"
+                  stroke="#d1d5db"
+                  strokeWidth="7"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+                {/* Barra horizontal do T */}
+                <line x1="22" y1="42" x2="78" y2="42" stroke="#d1d5db" strokeWidth="7" strokeLinecap="round" />
+                {/* Haste vertical do T */}
+                <line x1="50" y1="42" x2="50" y2="82" stroke="#d1d5db" strokeWidth="7" strokeLinecap="round" />
+              </svg>
+              <span className="text-xs tracking-widest text-gray-400 font-light uppercase">
+                Desenvolvido por <strong className="font-semibold text-gray-300">OLEGARIO TECH</strong>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
