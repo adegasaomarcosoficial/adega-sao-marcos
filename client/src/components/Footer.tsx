@@ -21,8 +21,21 @@ function InstagramIcon({ size = 18 }: { size?: number }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-white py-12">
-      <div className="container">
+    <footer
+      className="relative text-white py-12 overflow-hidden"
+      style={{ background: "#0d0a06" }}
+    >
+      {/* Background sutil com foto da fachada */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/manus-storage/adega-fachada_bc0e9403.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-center opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/70" />
+      </div>
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Empresa */}
           <div>

@@ -1,6 +1,7 @@
 /*
  * Hero Section - Adega São Marcos
- * Compacto: chopeira inteira visível na primeira tela
+ * Vídeo Ashby IPA Nirvana em loop, sem som, overlay premium
+ * Fallback: foto da fachada para mobile/conexões lentas
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
@@ -9,48 +10,106 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de fa
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-white via-[#FDFBF7] to-[#F5F1E8] py-6 md:py-10 overflow-hidden">
-      {/* Decoração de fundo sutil */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#8B0000]/3 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#D4AF37]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+    <section className="relative overflow-hidden min-h-screen flex items-center">
+      {/* ── Vídeo de fundo em loop, sem som ── */}
+      <div className="absolute inset-0 z-0">
+        <video
+          className="w-full h-full object-cover object-center"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/manus-storage/adega-fachada_bc0e9403.png"
+          preload="metadata"
+        >
+          <source src="/manus-storage/hero-chopp-ashby_cf33dd4f.mp4" type="video/mp4" />
+          {/* Fallback: imagem da fachada se vídeo não carregar */}
+          <img
+            src="/manus-storage/adega-fachada_bc0e9403.png"
+            alt="Adega São Marcos"
+            className="w-full h-full object-cover"
+          />
+        </video>
 
-      <div className="container relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-          {/* Conteúdo */}
-          <div className="flex flex-col gap-5">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a1a1a] leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Chopp Ashby Gelado{" "}
-              <span className="text-[#8B0000]">para Seu Evento</span>
-            </h1>
+        {/* Overlay escuro gradiente para legibilidade */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+      </div>
 
+      {/* ── Conteúdo principal ── */}
+      <div className="container relative z-10 py-20 md:py-28">
+        <div className="max-w-2xl">
+
+          {/* Badge premium */}
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/15 border border-[#D4AF37]/50 text-[#D4AF37] px-5 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+            🍺 Chopp Ashby Premium em Valinhos/SP
+          </div>
+
+          {/* Título principal */}
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Chopp Ashby Gelado{" "}
+            <span className="text-[#D4AF37]">para Seu Evento</span>
+          </h1>
+
+          {/* Subtítulo */}
+          <p className="text-white/85 text-lg md:text-xl mb-8 leading-relaxed max-w-lg">
+            Barris de 10 a 50 litros com entrega e locação de chopeira.
+            Atendemos Valinhos, Campinas e região.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-8 py-3.5 rounded-xl font-semibold text-lg
-                transition-all duration-300 inline-flex items-center justify-center gap-2 w-full md:w-auto
-                hover:bg-[#20BA58] hover:shadow-lg hover:scale-105
-                hover:shadow-[0_8px_25px_rgba(37,211,102,0.4)]"
+              className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg
+                transition-all duration-300 inline-flex items-center justify-center gap-3
+                hover:bg-[#20BA58] hover:scale-105
+                shadow-[0_4px_20px_rgba(37,211,102,0.35)]
+                hover:shadow-[0_8px_30px_rgba(37,211,102,0.55)]"
             >
-              <WhatsAppIcon size={22} />
+              <WhatsAppIcon size={24} />
               Pedir Orçamento no WhatsApp
+            </a>
+            <a
+              href="#barris"
+              className="border-2 border-white/60 text-white px-8 py-4 rounded-xl font-semibold text-lg
+                transition-all duration-300 inline-flex items-center justify-center gap-2
+                hover:bg-white/10 hover:border-white backdrop-blur-sm"
+            >
+              Ver Preços dos Barris
             </a>
           </div>
 
-          {/* Imagem Chopeira - compacta para caber na tela */}
-          <div className="group flex justify-center">
-            <div className="relative w-full max-w-sm">
-              <div className="overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 group-hover:shadow-[0_30px_80px_-20px_rgba(139,0,0,0.3)]">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/chopeira-ashby-profissional-jejSrWQyt3aHpkwSxpQdk7.webp"
-                  alt="Chopeira Ashby Premium"
-                  className="w-full h-auto transition-all duration-700 ease-out group-hover:scale-110"
-                />
+          {/* Info rápida em linha */}
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            {[
+              "Barris 10L a 50L",
+              "Locação de Chopeira",
+              "Entrega na Região",
+              "Chopp Ashby Premium",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-white/80 text-sm">
+                <span className="w-5 h-5 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/60 flex items-center justify-center text-[#D4AF37] text-xs font-bold flex-shrink-0">
+                  ✓
+                </span>
+                {item}
               </div>
-              {/* Glow effect */}
-              <div className="absolute -inset-4 bg-[#D4AF37]/10 rounded-3xl blur-2xl -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-            </div>
+            ))}
           </div>
+        </div>
+      </div>
+
+      {/* Seta de scroll */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <div className="w-8 h-8 border-2 border-white/40 rounded-full flex items-center justify-center">
+          <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
       </div>
     </section>

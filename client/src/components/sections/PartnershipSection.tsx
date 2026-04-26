@@ -10,8 +10,27 @@ const WHATSAPP_NUMBER = "5519993444124";
 
 export default function PartnershipSection() {
   return (
-    <section id="parceria" className="py-20 bg-gradient-to-b from-[#1a0a0a] to-[#2a1010] text-white overflow-hidden">
-      <div className="container">
+    <section
+      id="parceria"
+      className="relative py-20 text-white overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0d0500 0%, #1a0800 50%, #0d0500 100%)",
+      }}
+    >
+      {/* Textura de grãos de malte estilo Ashby */}
+      <div
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(ellipse 3px 4px at 30px 30px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 3px at 80px 55px, #C8A832 0%, transparent 100%),
+            radial-gradient(ellipse 4px 2px at 130px 25px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 4px at 170px 70px, #B8941E 0%, transparent 100%),
+            radial-gradient(ellipse 3px 3px at 50px 95px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 2px at 100px 115px, #C8A832 0%, transparent 100%)`,
+          backgroundSize: "200px 140px",
+        }}
+      />
+      <div className="container relative z-10">
         {/* Título da Seção */}
         <div className="text-center mb-16">
           <p className="text-[#D4AF37] font-semibold uppercase tracking-widest text-sm mb-3">

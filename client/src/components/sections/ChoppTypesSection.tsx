@@ -1,6 +1,7 @@
 /*
- * Tipos de Chopp Ashby - Cards com efeitos hover modernos
- * Imagens reais dos copos Ashby + dados técnicos oficiais
+ * Tipos de Chopp Ashby - Cards completos com imagens premium
+ * Imagens completas enviadas pelo cliente (design Ashby oficial)
+ * Grid responsivo, proporção padronizada, hover sutil, clique no card inteiro
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
@@ -9,159 +10,130 @@ const WHATSAPP_NUMBER = "5519993444124";
 const choppTypes = [
   {
     name: "Ashby Pilsen Puro Malte",
-    image: "/manus-storage/ashby-pilsen-puro-malte_b5d495e6.webp",
-    description:
-      "O chopp feito com 100% malte de cevada, que confere muito sabor, além de 4 lúpulos alemães e americanos — que transferem os aromas herbais.",
-    ibu: 12,
-    teor: "4,6%",
-    copo: "Pilsner ou Pokal",
-    bgColor: "from-amber-800/20 to-amber-600/5",
+    image: "/manus-storage/chopp-pilsen-puro-malte_db594f39.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Puro Malte.",
   },
   {
     name: "Ashby Pilsen Claro",
-    image: "/manus-storage/ashby-pilsen-claro_4068684f.webp",
-    description:
-      "Suave e extremamente refrescante, este é o chopp clássico que vai bem em qualquer momento.",
-    ibu: 12,
-    teor: "4,8%",
-    copo: "Pilsner ou Pokal",
-    bgColor: "from-red-800/20 to-red-600/5",
+    image: "/manus-storage/chopp-pilsen-claro_863c8adc.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Claro.",
   },
   {
     name: "Ashby Pilsen Escuro",
-    image: "/manus-storage/ashby-pilsen-escuro_790909b4.webp",
-    description:
-      "Com textura única e colarinho espesso, apresenta sabores suavemente adocicados e aromas com notas de frutas, caramelo e malte torrado.",
-    ibu: 11,
-    teor: "4,8%",
-    copo: "Pilsner ou Pokal",
-    bgColor: "from-stone-800/20 to-stone-600/5",
+    image: "/manus-storage/chopp-pilsen-escuro_8883a8b7.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Escuro.",
   },
   {
     name: "Ashby Weiss",
-    image: "/manus-storage/ashby-weiss_69cd704a.webp",
-    description:
-      "O tradicional e forte chopp de trigo da Baviera, diretamente no seu copo. Prove esse sabor alemão com aroma de cravo e banana.",
-    ibu: 15,
-    teor: "6,7%",
-    copo: "Weizen",
-    bgColor: "from-blue-800/20 to-blue-600/5",
+    image: "/manus-storage/chopp-weiss_517afd94.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Weiss.",
   },
   {
     name: "Ashby IPA Nirvana",
-    image: "/manus-storage/ashby-ipa-nirvana_2e2c2202.webp",
-    description:
-      "Essa representante do estilo India Pale Ale traz 4 lúpulos e o processo de dry hopping, sendo amargo e aromático no ponto certo.",
-    ibu: 55,
-    teor: "5,5%",
-    copo: "Pint",
-    bgColor: "from-green-800/20 to-green-600/5",
+    image: "/manus-storage/chopp-ipa-nirvana_c2d09810.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby IPA Nirvana.",
   },
   {
     name: "Ashby Pale Ale",
-    image: "/manus-storage/ashby-pale-ale_c340c32a.png",
-    description:
-      "Uma agradável receita inglesa que combina o aroma herbal dos lúpulos selecionados com o sabor de pão e cereais dos maltes especiais.",
-    ibu: 18,
-    teor: "5,1%",
-    copo: "Snifter",
-    bgColor: "from-orange-800/20 to-orange-600/5",
+    image: "/manus-storage/chopp-pale-ale_dc648af3.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pale Ale.",
   },
 ];
 
 export default function ChoppTypesSection() {
-  const handleWhatsApp = (type: string) => {
-    const message = `Olá! Gostaria de saber mais sobre o ${type}.`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
-
   return (
-    <section id="tipos-chopp" className="section section-beige">
-      <div className="container">
-        <div className="text-center mb-12">
-          <p className="text-[#8B0000] font-semibold uppercase tracking-widest text-sm mb-2">
+    <section
+      id="tipos-chopp"
+      className="relative py-20 overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0d0a06 0%, #1a1008 50%, #0d0a06 100%)",
+      }}
+    >
+      {/* Textura de grãos de malte - padrão Ashby */}
+      <div
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(ellipse 3px 3px at 20px 20px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 2px at 60px 45px, #C8A832 0%, transparent 100%),
+            radial-gradient(ellipse 4px 3px at 100px 15px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 4px at 140px 60px, #B8941E 0%, transparent 100%),
+            radial-gradient(ellipse 3px 2px at 30px 80px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 3px at 80px 100px, #C8A832 0%, transparent 100%)`,
+          backgroundSize: "160px 120px",
+        }}
+      />
+
+      <div className="container relative z-10">
+        {/* Cabeçalho */}
+        <div className="text-center mb-14">
+          <p className="text-[#D4AF37] font-semibold uppercase tracking-widest text-sm mb-3">
             Premiados Internacionalmente
           </p>
-          <h2 className="heading-lg mb-4">Conheça os Tipos de Chopp Ashby</h2>
-          <p className="text-lg text-[#666666]">
-            6 estilos premiados para todos os gostos
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Conheça os Tipos de Chopp Ashby
+          </h2>
+          <p className="text-white/60 text-lg max-w-xl mx-auto">
+            6 estilos premiados para todos os gostos — escolha o seu favorito
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {choppTypes.map((type, index) => (
-            <div
-              key={index}
-              className="group rounded-xl overflow-hidden border border-[#E8E4DC] bg-white
-                transition-all duration-500 ease-out
-                hover:shadow-[0_25px_60px_-15px_rgba(139,0,0,0.15)]
-                hover:-translate-y-3 hover:border-[#D4AF37]/50"
-            >
-              {/* Imagem do Chopp com hover */}
-              <div className={`bg-gradient-to-b ${type.bgColor} flex items-center justify-center h-56 p-4 overflow-hidden
-                transition-all duration-500 group-hover:bg-gradient-to-b group-hover:from-[#8B0000]/10 group-hover:to-transparent`}>
-                <img
-                  src={type.image}
-                  alt={type.name}
-                  className="w-auto h-full object-contain drop-shadow-lg
-                    transition-all duration-700 ease-out
-                    group-hover:scale-115 group-hover:drop-shadow-2xl group-hover:-rotate-3"
-                />
-              </div>
-
-              {/* Conteúdo */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#333333] mb-3 transition-colors duration-300 group-hover:text-[#8B0000]">
-                  {type.name}
-                </h3>
-                <p className="text-sm text-[#666666] mb-4 leading-relaxed">
-                  {type.description}
-                </p>
-
-                {/* Dados Técnicos */}
-                <div className="grid grid-cols-3 gap-2 mb-4 text-center">
-                  <div className="bg-[#F5F1E8] rounded-lg py-2 px-1 transition-all duration-300 group-hover:bg-[#8B0000]/10">
-                    <p className="text-xs text-[#999999] font-medium">IBU</p>
-                    <p className="text-sm font-bold text-[#8B0000]">{type.ibu}</p>
-                  </div>
-                  <div className="bg-[#F5F1E8] rounded-lg py-2 px-1 transition-all duration-300 group-hover:bg-[#8B0000]/10">
-                    <p className="text-xs text-[#999999] font-medium">Teor</p>
-                    <p className="text-sm font-bold text-[#8B0000]">{type.teor}</p>
-                  </div>
-                  <div className="bg-[#F5F1E8] rounded-lg py-2 px-1 transition-all duration-300 group-hover:bg-[#8B0000]/10">
-                    <p className="text-xs text-[#999999] font-medium">Copo</p>
-                    <p className="text-xs font-bold text-[#8B0000]">{type.copo}</p>
+        {/* Grid de cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {choppTypes.map((type) => {
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(type.whatsappMsg)}`;
+            return (
+              <a
+                key={type.name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl overflow-hidden cursor-pointer
+                  transition-all duration-400 ease-out
+                  hover:-translate-y-2 hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.25)]
+                  ring-1 ring-white/5 hover:ring-[#D4AF37]/40"
+                title={`Pedir ${type.name} no WhatsApp`}
+              >
+                {/* Imagem completa do card premium */}
+                <div className="relative w-full aspect-[9/16] overflow-hidden bg-black">
+                  <img
+                    src={type.image}
+                    alt={type.name}
+                    className="w-full h-full object-cover object-top
+                      transition-transform duration-500 ease-out
+                      group-hover:scale-[1.03]"
+                  />
+                  {/* Overlay sutil no hover com CTA */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-400 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
+                    <div className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                      <WhatsAppIcon size={18} />
+                      Pedir Este Chopp
+                    </div>
                   </div>
                 </div>
-
-                <button
-                  onClick={() => handleWhatsApp(type.name)}
-                  className="w-full bg-[#25D366] text-white px-4 py-3 rounded-lg font-semibold
-                    transition-all duration-300 flex items-center justify-center gap-2
-                    hover:bg-[#20BA58] hover:shadow-lg
-                    group-hover:shadow-[0_4px_15px_rgba(37,211,102,0.4)]"
-                >
-                  <WhatsAppIcon size={16} />
-                  Pedir Este Chopp
-                </button>
-              </div>
-            </div>
-          ))}
+              </a>
+            );
+          })}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-[#666666] mb-4 text-lg">
-            Qual é seu favorito? Fale com a gente!
+        {/* CTA geral */}
+        <div className="mt-14 text-center">
+          <p className="text-white/60 mb-5 text-lg">
+            Qual é o seu favorito? Fale com a gente!
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de saber mais sobre os tipos de Chopp Ashby disponíveis.`}
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre os tipos de Chopp Ashby disponíveis.")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#25D366] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2
-              hover:bg-[#20BA58] hover:shadow-lg hover:scale-105"
+            className="bg-[#25D366] text-white px-10 py-4 rounded-xl font-bold text-lg
+              transition-all duration-300 inline-flex items-center gap-3
+              hover:bg-[#20BA58] hover:scale-105
+              shadow-[0_4px_20px_rgba(37,211,102,0.3)]
+              hover:shadow-[0_8px_30px_rgba(37,211,102,0.5)]"
           >
-            <WhatsAppIcon size={18} />
+            <WhatsAppIcon size={20} />
             Conversar no WhatsApp
           </a>
         </div>
