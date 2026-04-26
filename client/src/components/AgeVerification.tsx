@@ -93,25 +93,26 @@ export default function AgeVerification({ children }: AgeVerificationProps) {
                   Você tem 18 anos ou mais?
                 </h2>
 
-                {/* Botões */}
+                {/* Botões: SIM à esquerda (principal/vermelho), NÃO à direita (secundário) */}
                 <div className="flex gap-4 justify-center">
                   <button
-                    onClick={handleNo}
-                    className="flex-1 max-w-[150px] border-2 border-[#333333] text-[#333333] px-6 py-3 rounded-xl
+                    onClick={handleYes}
+                    className="flex-1 max-w-[160px] bg-[#8B0000] text-white px-6 py-3.5 rounded-xl
                       font-bold text-base uppercase tracking-wider
                       transition-all duration-300
-                      hover:bg-[#333333] hover:text-white"
+                      hover:bg-[#6B0000] hover:shadow-lg hover:scale-105
+                      shadow-[0_4px_15px_rgba(139,0,0,0.3)]"
                   >
-                    Não
+                    Sim, tenho 18+
                   </button>
                   <button
-                    onClick={handleYes}
-                    className="flex-1 max-w-[150px] bg-[#8B0000] text-white px-6 py-3 rounded-xl
+                    onClick={handleNo}
+                    className="flex-1 max-w-[120px] border-2 border-[#333333] text-[#333333] bg-white px-6 py-3.5 rounded-xl
                       font-bold text-base uppercase tracking-wider
                       transition-all duration-300
-                      hover:bg-[#6B0000] hover:shadow-lg hover:scale-105"
+                      hover:bg-[#f5f5f5]"
                   >
-                    Sim
+                    Não
                   </button>
                 </div>
 

@@ -1,7 +1,8 @@
 /*
  * Tipos de Chopp Ashby - Cards completos com imagens premium
- * Imagens completas enviadas pelo cliente (design Ashby oficial)
- * Grid responsivo, proporção padronizada, hover sutil, clique no card inteiro
+ * object-fit: contain para não cortar as imagens
+ * Borda dourada, fundo escuro, hover sutil, clique no card inteiro
+ * Mobile: empilhado sem corte
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
@@ -49,7 +50,7 @@ export default function ChoppTypesSection() {
         background: "linear-gradient(180deg, #0d0a06 0%, #1a1008 50%, #0d0a06 100%)",
       }}
     >
-      {/* Textura de grãos de malte - padrão Ashby */}
+      {/* Textura de grãos de malte */}
       <div
         className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
@@ -80,7 +81,7 @@ export default function ChoppTypesSection() {
           </p>
         </div>
 
-        {/* Grid de cards */}
+        {/* Grid de cards — imagens completas sem corte */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {choppTypes.map((type) => {
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(type.whatsappMsg)}`;
@@ -91,23 +92,34 @@ export default function ChoppTypesSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block rounded-2xl overflow-hidden cursor-pointer
+                  bg-[#0a0704]
+                  border border-[#D4AF37]/30 hover:border-[#D4AF37]/70
                   transition-all duration-400 ease-out
-                  hover:-translate-y-2 hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.25)]
-                  ring-1 ring-white/5 hover:ring-[#D4AF37]/40"
+                  hover:-translate-y-2
+                  hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.3)]"
                 title={`Pedir ${type.name} no WhatsApp`}
               >
-                {/* Imagem completa do card premium */}
-                <div className="relative w-full aspect-[9/16] overflow-hidden bg-black">
+                {/* Imagem completa — contain para não cortar nada */}
+                <div className="relative w-full bg-[#0a0704] flex items-center justify-center"
+                  style={{ aspectRatio: "9/16" }}
+                >
                   <img
                     src={type.image}
                     alt={type.name}
-                    className="w-full h-full object-cover object-top
+                    className="w-full h-full object-contain
                       transition-transform duration-500 ease-out
-                      group-hover:scale-[1.03]"
+                      group-hover:scale-[1.02]"
+                    style={{ display: "block" }}
                   />
+
                   {/* Overlay sutil no hover com CTA */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-400 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
-                    <div className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25
+                    transition-all duration-400 flex items-end justify-center pb-6
+                    opacity-0 group-hover:opacity-100">
+                    <div className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold
+                      flex items-center gap-2 shadow-lg
+                      transform translate-y-4 group-hover:translate-y-0
+                      transition-transform duration-400">
                       <WhatsAppIcon size={18} />
                       Pedir Este Chopp
                     </div>

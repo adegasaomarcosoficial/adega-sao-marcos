@@ -83,6 +83,11 @@
     @apply border-border outline-ring/50;
   }
 
+  /* Compensa o header sticky de 80px nos links âncora */
+  html {
+    scroll-padding-top: 88px;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", sans-serif;
