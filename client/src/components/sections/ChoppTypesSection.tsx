@@ -11,32 +11,32 @@ const WHATSAPP_NUMBER = "5519993444124";
 const choppTypes = [
   {
     name: "Ashby Pilsen Puro Malte",
-    image: "/manus-storage/chopp-pilsen-puro-malte_2d1f74da.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/KXbuLdDeumTWqYbF.png",
     whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Puro Malte.",
   },
   {
     name: "Ashby Pilsen Claro",
-    image: "/manus-storage/chopp-pilsen-claro_d0fadd1d.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/EuWocelEDICYQRet.png",
     whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Claro.",
   },
   {
     name: "Ashby Pilsen Escuro",
-    image: "/manus-storage/chopp-pilsen-escuro_a174a15d.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/kiNsFQmXoNwHnmvQ.png",
     whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Escuro.",
   },
   {
     name: "Ashby Weiss",
-    image: "/manus-storage/chopp-weiss_d47c5ef8.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/QBnAWjDhuDLEdPbP.png",
     whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Weiss.",
   },
   {
     name: "Ashby IPA Nirvana",
-    image: "/manus-storage/chopp-ipa-nirvana_4d626934.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/DQYHusCOjxzzRXLU.png",
     whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby IPA Nirvana.",
   },
   {
     name: "Ashby Pale Ale",
-    image: "/manus-storage/chopp-pale-ale_f10cec64.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/JVTibTyTiCmBohXN.png",
     whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pale Ale.",
   },
 ];

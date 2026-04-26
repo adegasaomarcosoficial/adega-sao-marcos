@@ -84,7 +84,7 @@ export default function SobreAdegaSection() {
               transition-all duration-500 group">
 
               <img
-                src="/manus-storage/adega-fachada_be228555.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/KaGizoxkCvvjqEqc.png"
                 alt="Fachada da Adega São Marcos em Valinhos/SP"
                 className="w-full h-auto object-cover
                   transition-transform duration-700 group-hover:scale-[1.02]"

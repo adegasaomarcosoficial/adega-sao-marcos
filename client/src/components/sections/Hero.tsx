@@ -22,7 +22,7 @@ export default function Hero() {
           poster="/assets/adega-fachada.png"
           preload="metadata"
         >
-          <source src="/manus-storage/hero-chopp-ashby_7c8d6a72.mp4" type="video/mp4" />
+          <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/FQwQvfoyOySfIfqa.mp4" type="video/mp4" />
           {/* Fallback: imagem da fachada se vídeo não carregar */}
           <img
             src="/assets/adega-fachada.png"

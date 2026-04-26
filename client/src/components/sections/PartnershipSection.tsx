@@ -45,13 +45,13 @@ export default function PartnershipSection() {
         {/* Logos lado a lado */}
         <div className="flex items-center justify-center gap-8 md:gap-16 mb-16">
           <img
-            src="/manus-storage/ashby-logo_583c1dfa.png"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/zuZDYXcOrtWrmlgE.png"
             alt="Ashby Cervejaria"
             className="h-24 md:h-32 w-auto object-contain"
           />
           <div className="text-[#D4AF37] text-4xl md:text-5xl font-light">+</div>
           <img
-            src="/manus-storage/adega-logo_9fc511f3.png"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/HiSzMWvPZbLNWbbt.png"
             alt="Adega São Marcos"
             className="h-24 md:h-32 w-auto object-contain"
           />
