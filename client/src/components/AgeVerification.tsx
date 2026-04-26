@@ -55,15 +55,19 @@ export default function AgeVerification({ children }: AgeVerificationProps) {
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
 
           {/* Modal fixo na parte inferior */}
-          <div className="relative bg-white rounded-t-3xl shadow-2xl w-full max-w-lg p-8 text-center
-            animate-in slide-in-from-bottom duration-500">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="age-verification-title"
+            className="relative bg-white rounded-t-3xl shadow-2xl w-full max-w-lg p-8 text-center animate-in slide-in-from-bottom duration-500"
+          >
             {/* Indicador de arraste */}
             <div className="w-12 h-1.5 bg-[#E8E4DC] rounded-full mx-auto mb-5" />
 
             {/* Logo Adega São Marcos */}
             <div className="flex justify-center mb-5">
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/xCIOOTmvMLgFzVlu.png"
+                src="/assets/adega-logo.png"
                 alt="Adega São Marcos"
                 className="w-28 h-28 object-contain"
               />
@@ -89,7 +93,7 @@ export default function AgeVerification({ children }: AgeVerificationProps) {
                 </p>
 
                 {/* Pergunta */}
-                <h2 className="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6 uppercase tracking-wide">
+                <h2 id="age-verification-title" className="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6 uppercase tracking-wide">
                   Você tem 18 anos ou mais?
                 </h2>
 

@@ -45,13 +45,13 @@ export default function PartnershipSection() {
         {/* Logos lado a lado */}
         <div className="flex items-center justify-center gap-8 md:gap-16 mb-16">
           <img
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/iSgubfTJLPbDncyN.png"
+            src="/assets/ashby-logo.png"
             alt="Ashby Cervejaria"
             className="h-24 md:h-32 w-auto object-contain"
           />
           <div className="text-[#D4AF37] text-4xl md:text-5xl font-light">+</div>
           <img
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/xCIOOTmvMLgFzVlu.png"
+            src="/assets/adega-logo.png"
             alt="Adega São Marcos"
             className="h-24 md:h-32 w-auto object-contain"
           />
@@ -124,7 +124,7 @@ export default function PartnershipSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#D4AF37]" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Adega São Marcos — Distribuidor Oficial
+                Adega São Marcos — Chopp Ashby para Eventos
               </h3>
               <div className="flex items-center gap-2 text-gray-400 mb-4">
                 <Calendar size={16} />
@@ -134,7 +134,7 @@ export default function PartnershipSection() {
                 <span>Valinhos, Campinas e Região</span>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4 text-base">
-                A <strong className="text-white">Adega São Marcos</strong> é distribuidora oficial do Chopp Ashby 
+                A <strong className="text-white">Adega São Marcos</strong> trabalha com Chopp Ashby 
                 em Valinhos, Campinas e região. Desde 2020, levamos a qualidade premiada da Cervejaria Ashby 
                 diretamente para a sua festa, churrasco ou evento corporativo.
               </p>

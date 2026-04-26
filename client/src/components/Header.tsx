@@ -18,7 +18,7 @@ export default function Header() {
         {/* Logo + Nome Premium */}
         <a href="#" className="flex items-center gap-3 shrink-0">
           <img
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/xCIOOTmvMLgFzVlu.png"
+            src="/assets/adega-logo.png"
             alt="Adega São Marcos"
             className="h-14 w-auto object-contain"
           />
@@ -65,6 +65,9 @@ export default function Header() {
           <a href="#como-funciona" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             Como Funciona
           </a>
+          <a href="#sobre" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
+            Sobre
+          </a>
           <a href="#faq" className="text-[#333333] hover:text-[#8B0000] transition-colors font-medium text-sm">
             FAQ
           </a>
@@ -109,6 +112,9 @@ export default function Header() {
           </a>
           <a href="#como-funciona" onClick={() => setMobileOpen(false)} className="block text-[#333333] hover:text-[#8B0000] font-medium py-2">
             Como Funciona
+          </a>
+          <a href="#sobre" onClick={() => setMobileOpen(false)} className="block text-[#333333] hover:text-[#8B0000] font-medium py-2">
+            Sobre
           </a>
           <a href="#faq" onClick={() => setMobileOpen(false)} className="block text-[#333333] hover:text-[#8B0000] font-medium py-2">
             FAQ
