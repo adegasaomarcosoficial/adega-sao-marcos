@@ -18,7 +18,7 @@ export default function Header() {
         {/* Logo + Nome Premium */}
         <a href="#" className="flex items-center gap-3 shrink-0">
           <img
-            src="/assets/adega-logo.png"
+            src="/manus-storage/adega-logo_9fc511f3.png"
             alt="Adega São Marcos"
             className="h-14 w-auto object-contain"
           />

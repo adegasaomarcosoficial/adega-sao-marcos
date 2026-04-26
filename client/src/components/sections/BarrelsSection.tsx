@@ -93,7 +93,7 @@ export default function BarrelsSection() {
                   <div className="w-full h-32 bg-gradient-to-b from-[#F5F1E8] to-[#EDE8DB] rounded-lg mb-3 flex items-center justify-center overflow-hidden
                     transition-all duration-300 group-hover:bg-gradient-to-b group-hover:from-[#FFF5F0] group-hover:to-[#F5F1E8]">
                     <img
-                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030237391/2yNdveRVHFrsqhfsSL7zE7/chopeira-ashby-profissional-jejSrWQyt3aHpkwSxpQdk7.webp"
+                      src="/assets/chopeira-ashby.webp"
                       alt={`Barril ${barrel.size} Chopp Ashby`}
                       className="w-auto h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-2"
                     />

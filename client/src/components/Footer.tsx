@@ -28,7 +28,7 @@ export function Footer() {
       {/* Background sutil com foto da fachada */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/wuTxhpTVaffedzGQ.png"
+          src="/manus-storage/adega-fachada_be228555.png"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover object-center opacity-10"
@@ -40,7 +40,7 @@ export function Footer() {
           {/* Empresa */}
           <div>
             <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/xCIOOTmvMLgFzVlu.png"
+              src="/manus-storage/adega-logo_9fc511f3.png"
               alt="Adega São Marcos"
               className="h-20 w-auto object-contain mb-4"
             />
@@ -50,7 +50,7 @@ export function Footer() {
             <div className="mt-4 flex items-center gap-3">
               <span className="text-xs text-gray-500">Distribuidor oficial:</span>
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/iSgubfTJLPbDncyN.png"
+                src="/assets/ashby-logo.png"
                 alt="Ashby Cervejaria"
                 className="h-10 w-auto object-contain"
               />
