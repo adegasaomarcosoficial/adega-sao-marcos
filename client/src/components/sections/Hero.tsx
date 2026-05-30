@@ -1,17 +1,17 @@
 /*
  * Hero Section - Adega São Marcos
  * Vídeo Ashby IPA Nirvana em loop, sem som, overlay premium
- * Fallback: foto da fachada para mobile/conexões lentas
+ * WhatsApp agora vem do arquivo editável:
+ * client/public/data/site-config.json
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-
-const WHATSAPP_NUMBER = "5519993444124";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de fazer um orçamento para chopp Ashby.`;
+import { buildWhatsAppLink, useSiteConfig } from "@/lib/siteConfig";
 
 export default function Hero() {
+  const config = useSiteConfig();
+
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center">
-      {/* ── Vídeo de fundo em loop, sem som ── */}
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover object-center"
@@ -22,8 +22,11 @@ export default function Hero() {
           poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/KaGizoxkCvvjqEqc.png"
           preload="metadata"
         >
-          <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/FQwQvfoyOySfIfqa.mp4" type="video/mp4" />
-          {/* Fallback: imagem da fachada se vídeo não carregar */}
+          <source
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/FQwQvfoyOySfIfqa.mp4"
+            type="video/mp4"
+          />
+
           <img
             src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/KaGizoxkCvvjqEqc.png"
             alt="Adega São Marcos"
@@ -31,21 +34,16 @@ export default function Hero() {
           />
         </video>
 
-        {/* Overlay escuro gradiente para legibilidade */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
       </div>
 
-      {/* ── Conteúdo principal ── */}
       <div className="container relative z-10 py-20 md:py-28">
         <div className="max-w-2xl">
-
-          {/* Badge premium */}
           <div className="inline-flex items-center gap-2 bg-[#D4AF37]/15 border border-[#D4AF37]/50 text-[#D4AF37] px-5 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
             🍺 Chopp Ashby Premium em Valinhos/SP
           </div>
 
-          {/* Título principal */}
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -54,16 +52,17 @@ export default function Hero() {
             <span className="text-[#D4AF37]">para Seu Evento</span>
           </h1>
 
-          {/* Subtítulo */}
           <p className="text-white/85 text-lg md:text-xl mb-8 leading-relaxed max-w-lg">
             Barris de 10 a 50 litros com entrega e locação de chopeira.
             Atendemos Valinhos, Campinas e região.
           </p>
 
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <a
-              href={WHATSAPP_URL}
+              href={buildWhatsAppLink(
+                config.whatsapp.number,
+                config.whatsapp.defaultMessage
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg
@@ -75,6 +74,7 @@ export default function Hero() {
               <WhatsAppIcon size={24} />
               Pedir Orçamento no WhatsApp
             </a>
+
             <a
               href="#barris"
               className="border-2 border-white/60 text-white px-8 py-4 rounded-xl font-semibold text-lg
@@ -85,7 +85,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Info rápida em linha */}
           <div className="flex flex-wrap gap-x-8 gap-y-3">
             {[
               "Barris 10L a 50L",
@@ -104,7 +103,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Seta de scroll */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <div className="w-8 h-8 border-2 border-white/40 rounded-full flex items-center justify-center">
           <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
