@@ -1,135 +1,160 @@
 /*
- * Locação de Chopeira
- * Preço e texto agora vêm do arquivo editável:
- * client/public/data/site-config.json
+ * Tipos de Chopp Ashby - Cards completos com imagens premium
+ * object-fit: contain para não cortar as imagens
+ * Borda dourada, fundo escuro, hover sutil, clique no card inteiro
+ * Mobile: empilhado sem corte
  */
-import { Check } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-import { buildWhatsAppLink, formatCurrency, useSiteConfig } from "@/lib/siteConfig";
+import { buildWhatsAppLink, useSiteConfig } from "@/lib/siteConfig";
 
-const CHOPEIRA_IMAGE =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/jsPvnyFFCiPiDeZu.webp";
-
-const benefits = [
-  "Instalação no local do evento",
-  "Atendimento personalizado",
-  "Suporte técnico",
-  "Equipamento de qualidade Ashby",
+const choppTypes = [
+  {
+    name: "Ashby Pilsen Puro Malte",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/KXbuLdDeumTWqYbF.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Puro Malte.",
+  },
+  {
+    name: "Ashby Pilsen Claro",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/EuWocelEDICYQRet.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Claro.",
+  },
+  {
+    name: "Ashby Pilsen Escuro",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/kiNsFQmXoNwHnmvQ.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pilsen Escuro.",
+  },
+  {
+    name: "Ashby Weiss",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/QBnAWjDhuDLEdPbP.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Weiss.",
+  },
+  {
+    name: "Ashby IPA Nirvana",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/DQYHusCOjxzzRXLU.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby IPA Nirvana.",
+  },
+  {
+    name: "Ashby Pale Ale",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030237391/JVTibTyTiCmBohXN.png",
+    whatsappMsg: "Olá! Gostaria de pedir o Chopp Ashby Pale Ale.",
+  },
 ];
 
-export default function ChoppeiraSection() {
+export default function ChoppTypesSection() {
   const config = useSiteConfig();
 
-  if (!config.choppeira.active) {
-    return null;
-  }
-
   return (
-    <section id="chopeira" className="section section-light overflow-hidden">
-      <div className="container">
-        <div className="text-center mb-12">
-          <p className="text-[#8B0000] font-semibold uppercase tracking-widest text-sm mb-2">
-            Equipamento Profissional
+    <section
+      id="tipos-chopp"
+      className="relative py-20 overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0d0a06 0%, #1a1008 50%, #0d0a06 100%)",
+      }}
+    >
+      <div
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(ellipse 3px 3px at 20px 20px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 2px at 60px 45px, #C8A832 0%, transparent 100%),
+            radial-gradient(ellipse 4px 3px at 100px 15px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 4px at 140px 60px, #B8941E 0%, transparent 100%),
+            radial-gradient(ellipse 3px 2px at 30px 80px, #D4AF37 0%, transparent 100%),
+            radial-gradient(ellipse 2px 3px at 80px 100px, #C8A832 0%, transparent 100%)`,
+          backgroundSize: "160px 120px",
+        }}
+      />
+
+      <div className="container relative z-10">
+        <div className="text-center mb-14">
+          <p className="text-[#D4AF37] font-semibold uppercase tracking-widest text-sm mb-3">
+            Premiados Internacionalmente
           </p>
-          <h2 className="heading-lg mb-4">Locação de Chopeira</h2>
-          <p className="text-lg text-[#666666]">
-            Chopeira Ashby com instalação inclusa para seu evento
+
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Conheça os Tipos de Chopp Ashby
+          </h2>
+
+          <p className="text-white/60 text-lg max-w-xl mx-auto">
+            6 estilos premiados para todos os gostos — escolha o seu favorito
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="group flex justify-center">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-[0_30px_80px_-20px_rgba(139,0,0,0.25)]">
-              <img
-                src={CHOPEIRA_IMAGE}
-                alt="Chopeira Ashby com instalação"
-                className="w-full h-auto transition-all duration-700 ease-out group-hover:scale-110"
-              />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {choppTypes.map((type) => {
+            const url = buildWhatsAppLink(config.whatsapp.number, type.whatsappMsg);
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#8B0000]/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-              <div
-                className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg
-                transition-all duration-500 group-hover:scale-110 group-hover:bg-[#8B0000] group-hover:text-white"
+            return (
+              <a
+                key={type.name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl overflow-hidden cursor-pointer
+                  bg-[#0a0704]
+                  border border-[#D4AF37]/30 hover:border-[#D4AF37]/70
+                  transition-all duration-400 ease-out
+                  hover:-translate-y-2
+                  hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.3)]"
+                title={`Pedir ${type.name} no WhatsApp`}
               >
-                <p className="text-xs text-[#666666] group-hover:text-white/80 transition-colors">
-                  Locação
-                </p>
-                <p className="text-2xl font-bold text-[#8B0000] group-hover:text-white transition-colors">
-                  {formatCurrency(config.choppeira.price)}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <div>
-              <h3
-                className="text-2xl md:text-3xl font-bold text-[#333333] mb-4"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Chopeira Ashby Profissional
-              </h3>
-
-              <p className="text-lg text-[#666666] leading-relaxed">
-                Equipamento profissional com instalação completa no local do seu
-                evento. Garantimos que cada gole saia na temperatura e cremosidade
-                perfeitas.
-              </p>
-            </div>
-
-            <div
-              className="bg-gradient-to-r from-[#F5F1E8] to-[#EDE8DB] rounded-xl p-6 border border-[#E8E4DC]
-              transition-all duration-300 hover:shadow-lg hover:border-[#D4AF37]/30"
-            >
-              <p className="text-sm text-[#666666] mb-1">Valor da locação</p>
-              <p className="text-4xl font-bold text-[#8B0000]">
-                {formatCurrency(config.choppeira.price)}
-              </p>
-              <p className="text-xs text-[#999999] mt-1">
-                {config.choppeira.text}
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              {benefits.map((benefit, index) => (
                 <div
-                  key={index}
-                  className="flex items-center gap-3 group/item transition-all duration-200 hover:translate-x-1"
+                  className="relative w-full bg-[#0a0704] flex items-center justify-center"
+                  style={{ aspectRatio: "9/16" }}
                 >
+                  <img
+                    src={type.image}
+                    alt={type.name}
+                    className="w-full h-full object-contain
+                      transition-transform duration-500 ease-out
+                      group-hover:scale-[1.02]"
+                    style={{ display: "block" }}
+                  />
+
                   <div
-                    className="w-6 h-6 rounded-full bg-[#8B0000]/10 flex items-center justify-center shrink-0
-                    transition-all duration-300 group-hover/item:bg-[#8B0000] group-hover/item:scale-110"
+                    className="absolute inset-0 bg-black/0 group-hover:bg-black/25
+                    transition-all duration-400 flex items-end justify-center pb-6
+                    opacity-0 group-hover:opacity-100"
                   >
-                    <Check
-                      size={14}
-                      className="text-[#8B0000] transition-colors duration-300 group-hover/item:text-white"
-                    />
+                    <div
+                      className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold
+                      flex items-center gap-2 shadow-lg
+                      transform translate-y-4 group-hover:translate-y-0
+                      transition-transform duration-400"
+                    >
+                      <WhatsAppIcon size={18} />
+                      Pedir Este Chopp
+                    </div>
                   </div>
-
-                  <span className="text-[#333333] font-medium transition-colors duration-300 group-hover/item:text-[#8B0000]">
-                    {benefit}
-                  </span>
                 </div>
-              ))}
-            </div>
+              </a>
+            );
+          })}
+        </div>
 
-            <a
-              href={buildWhatsAppLink(
-                config.whatsapp.number,
-                "Olá! Gostaria de alugar uma chopeira Ashby para meu evento."
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-semibold text-lg
-                transition-all duration-300 inline-flex items-center justify-center gap-2
-                hover:bg-[#20BA58] hover:shadow-lg hover:scale-105
-                hover:shadow-[0_8px_25px_rgba(37,211,102,0.4)]"
-            >
-              <WhatsAppIcon size={20} />
-              Alugar Chopeira
-            </a>
-          </div>
+        <div className="mt-14 text-center">
+          <p className="text-white/60 mb-5 text-lg">
+            Qual é o seu favorito? Fale com a gente!
+          </p>
+
+          <a
+            href={buildWhatsAppLink(
+              config.whatsapp.number,
+              "Olá! Gostaria de saber mais sobre os tipos de Chopp Ashby disponíveis."
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#25D366] text-white px-10 py-4 rounded-xl font-bold text-lg
+              transition-all duration-300 inline-flex items-center gap-3
+              hover:bg-[#20BA58] hover:scale-105
+              shadow-[0_4px_20px_rgba(37,211,102,0.3)]
+              hover:shadow-[0_8px_30px_rgba(37,211,102,0.5)]"
+          >
+            <WhatsAppIcon size={20} />
+            Conversar no WhatsApp
+          </a>
         </div>
       </div>
     </section>
