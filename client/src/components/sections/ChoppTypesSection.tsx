@@ -5,8 +5,7 @@
  * Mobile: empilhado sem corte
  */
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-
-const WHATSAPP_NUMBER = "5519993444124";
+import { buildWhatsAppLink, useSiteConfig } from "@/lib/siteConfig";
 
 const choppTypes = [
   {
@@ -42,6 +41,8 @@ const choppTypes = [
 ];
 
 export default function ChoppTypesSection() {
+  const config = useSiteConfig();
+
   return (
     <section
       id="tipos-chopp"
@@ -50,7 +51,6 @@ export default function ChoppTypesSection() {
         background: "linear-gradient(180deg, #0d0a06 0%, #1a1008 50%, #0d0a06 100%)",
       }}
     >
-      {/* Textura de grãos de malte */}
       <div
         className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
@@ -65,26 +65,27 @@ export default function ChoppTypesSection() {
       />
 
       <div className="container relative z-10">
-        {/* Cabeçalho */}
         <div className="text-center mb-14">
           <p className="text-[#D4AF37] font-semibold uppercase tracking-widest text-sm mb-3">
             Premiados Internacionalmente
           </p>
+
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Conheça os Tipos de Chopp Ashby
           </h2>
+
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             6 estilos premiados para todos os gostos — escolha o seu favorito
           </p>
         </div>
 
-        {/* Grid de cards — imagens completas sem corte */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {choppTypes.map((type) => {
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(type.whatsappMsg)}`;
+            const url = buildWhatsAppLink(config.whatsapp.number, type.whatsappMsg);
+
             return (
               <a
                 key={type.name}
@@ -99,8 +100,8 @@ export default function ChoppTypesSection() {
                   hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.3)]"
                 title={`Pedir ${type.name} no WhatsApp`}
               >
-                {/* Imagem completa — contain para não cortar nada */}
-                <div className="relative w-full bg-[#0a0704] flex items-center justify-center"
+                <div
+                  className="relative w-full bg-[#0a0704] flex items-center justify-center"
                   style={{ aspectRatio: "9/16" }}
                 >
                   <img
@@ -112,14 +113,17 @@ export default function ChoppTypesSection() {
                     style={{ display: "block" }}
                   />
 
-                  {/* Overlay sutil no hover com CTA */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25
+                  <div
+                    className="absolute inset-0 bg-black/0 group-hover:bg-black/25
                     transition-all duration-400 flex items-end justify-center pb-6
-                    opacity-0 group-hover:opacity-100">
-                    <div className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold
+                    opacity-0 group-hover:opacity-100"
+                  >
+                    <div
+                      className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold
                       flex items-center gap-2 shadow-lg
                       transform translate-y-4 group-hover:translate-y-0
-                      transition-transform duration-400">
+                      transition-transform duration-400"
+                    >
                       <WhatsAppIcon size={18} />
                       Pedir Este Chopp
                     </div>
@@ -130,13 +134,16 @@ export default function ChoppTypesSection() {
           })}
         </div>
 
-        {/* CTA geral */}
         <div className="mt-14 text-center">
           <p className="text-white/60 mb-5 text-lg">
             Qual é o seu favorito? Fale com a gente!
           </p>
+
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre os tipos de Chopp Ashby disponíveis.")}`}
+            href={buildWhatsAppLink(
+              config.whatsapp.number,
+              "Olá! Gostaria de saber mais sobre os tipos de Chopp Ashby disponíveis."
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366] text-white px-10 py-4 rounded-xl font-bold text-lg

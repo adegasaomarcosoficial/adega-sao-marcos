@@ -1,0 +1,59 @@
+{
+  "whatsapp": {
+    "number": "5519993444124",
+    "defaultMessage": "Olá! Gostaria de fazer um orçamento para chopp Ashby."
+  },
+  "promo": {
+    "active": false,
+    "title": "Promoção da semana",
+    "text": "Consulte condições especiais para seu evento neste fim de semana.",
+    "buttonText": "Pedir promoção no WhatsApp"
+  },
+  "barrels": [
+    {
+      "size": "10 Litros",
+      "liters": 10,
+      "pricePerLiter": 13.25,
+      "description": "Ideal para encontros menores e momentos mais reservados",
+      "popular": false,
+      "active": true
+    },
+    {
+      "size": "15 Litros",
+      "liters": 15,
+      "pricePerLiter": 13.25,
+      "description": "Prático para reunir amigos com chopp gelado e presença premium",
+      "popular": false,
+      "active": true
+    },
+    {
+      "size": "20 Litros",
+      "liters": 20,
+      "pricePerLiter": 13.25,
+      "description": "Mais capacidade para churrascos, aniversários e celebrações",
+      "popular": true,
+      "active": true
+    },
+    {
+      "size": "30 Litros",
+      "liters": 30,
+      "pricePerLiter": 12.99,
+      "description": "Perfeito para eventos com maior fluxo e praticidade",
+      "popular": true,
+      "active": true
+    },
+    {
+      "size": "50 Litros",
+      "liters": 50,
+      "pricePerLiter": 12.99,
+      "description": "Volume, presença e experiência completa no evento",
+      "popular": false,
+      "active": true
+    }
+  ],
+  "choppeira": {
+    "price": 49.9,
+    "text": "Instalação inclusa",
+    "active": true
+  }
+}
