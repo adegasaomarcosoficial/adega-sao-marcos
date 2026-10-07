@@ -172,10 +172,18 @@ export function Footer() {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
             <p>© 2020–2026 Adega São Marcos. Todos os direitos reservados.</p>
-            <p>
-              Venda e consumo de bebidas alcoólicas proibidos para menores de 18
-              anos.
-            </p>
+            <div className="flex flex-col md:items-end gap-2">
+              <p>
+                Venda e consumo de bebidas alcoólicas proibidos para menores de 18
+                anos.
+              </p>
+              <a
+                href="/privacidade.html"
+                className="hover:text-[#D4AF37] transition-colors"
+              >
+                Política de Privacidade
+              </a>
+            </div>
           </div>
 
           {/* Assinatura OLEGARIO TECH */}
