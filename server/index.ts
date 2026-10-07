@@ -18,9 +18,10 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
+  // Preserve SPA routing while returning a real 404 status for unknown public routes.
+  app.get("*", (req, res) => {
+    const knownSpaRoute = req.path === "/" || req.path === "/admin";
+    res.status(knownSpaRoute ? 200 : 404).sendFile(path.join(staticPath, "index.html"));
   });
 
   const port = process.env.PORT || 3000;
